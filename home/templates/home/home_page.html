@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load wagtailimages_tags %}
+
+{% block content %}
+<h1>
+    Welcome to No Future store
+</h1>
+
+<div class="columns">
+    {% for product in products %}
+    <div class="column col-3">
+        <div class="card">
+            <div class="card-image">
+                {% image product.image fill-200x300 as tmp_image %}
+                <img class="wagphoto" src="{{ tmp_image.url }}" alt="" class="img-responsive">
+            </div>
+            <div class="card-header">
+                <a href="{{ product.get_url }}" class="btn btn-primary float-right">
+                    <i class="icon icon-plus"></i>
+                </a>
+                <div class="card-title h5">
+                    {{ product.title }}
+                </div>
+
+                    {{ product.price }}
+
+            </div>
+            <div class="card-body">
+                {{ product.description }}
+
+            </div>
+        </div>
+        <br>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
