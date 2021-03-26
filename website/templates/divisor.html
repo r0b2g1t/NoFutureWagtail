@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<ul style="text-align:center;">
+
+    <form action="" method="POST">
+        {% csrf_token %}
+            <h1 class = "title">Show all divisors of a number:</h1>
+
+        <br>
+        {{ form }}
+
+        <input type="submit" value="Let's do that!">
+        <h5>{{ lst }}</h5>
+
+            <br><br>
+        <table style="width:100%">
+
+        <tr>
+            <td style="width: 50%"><a href="/calculators/primes"><img style="width:  ;" src="/static/primes2.jpg"></a></td>
+            <td style="width: 50%"><a href="/calculators/primes2"><img style="width: 250px;" src="/static/primes.jpg"></a></td>
+        </tr>
+    </table>
+    </form>
+
+
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<ul style="text-align:center;">
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <h3>Is it a prime number?</h3>
+
+        <br><br>
+        {{ form2.as_p}}
+
+        <button type="submit" name="prime">Is it a prime?"</button>
+        <h5>{{ number }}</h5>
+
+    </form>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <h3>Show all prime numbers between 2 numbers:</h3><br>
+        <p>Number3 needs to be smaller than 10001.</p>
+        <br><br>
+        {{ form3.as_p }}
+
+        <button type="submit" name="prime2">Let's do that!"</button>
+        <p class="answer">{{ lst }}</p>
+
+
+    </form>
+</ul>
+{% endblock %}

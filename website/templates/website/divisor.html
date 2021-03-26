@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+<ul style="text-align:center;">
+
+    <form action="" method="POST">
+        {% csrf_token %}
+            <h3>Show all divisors of a number:</h3>
+
+        <br>
+        {{ form }}
+
+        <input type="submit" value="Let's do that!">
+        <h5>{{ lst }}</h5>
+
+        <br><br><br><br><br>
+        <h3>All calculators:</h3>
+        <p>Check if a number is a prime number:
+            <a href='/prime/primes/'>Check it out!</a></p>
+
+        <p>Show all prime numbers between 2 numbers:
+            <a href="/prime/primes2">Check it out!</a></p>
+
+        <p>Check all divisors of a number:
+            <a href='/prime/divisors/'>Check it out!</a>
+        <br><br>
+        <h3>Front page:</h3>
+        <p>Yeap, I wanna go back:
+            <a href='/prime/'>I'm ready!</a>
+
+    </form>
+
+{% endblock %}
