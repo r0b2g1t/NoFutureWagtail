@@ -14,6 +14,11 @@ class HomePage(Page):
 
 
 class Product(Page):
+    SIZE = (
+        ('L', 'Large'),
+        ('M', 'Medium'),
+        ('S', 'Small'),
+    )
     sku = models.CharField(max_length=255)
     short_description = models.TextField(blank=True, null=True)
     price = models.DecimalField(decimal_places=2, max_digits=10)
@@ -24,6 +29,7 @@ class Product(Page):
         on_delete=models.SET_NULL,
         related_name='+'
     )
+    size = models.CharField(max_length=300, choices = SIZE)
 
     content_panels = Page.content_panels + [
         FieldPanel('sku'),
@@ -31,6 +37,7 @@ class Product(Page):
         ImageChooserPanel('image'),
         FieldPanel('short_description'),
         InlinePanel('custom_fields', label='Custom fields'),
+        FieldPanel('size'),
     ]
 
     def get_context(self, request):
