@@ -28,6 +28,11 @@ def thanks(view):
 class ProgrammingView(TemplateView):
     pass
 
+class KnittingView(TemplateView):
+    template_name = 'knitting.html'
+
+class HerbsView(TemplateView):
+    pass
 
 class MusicView(TemplateView):
     template_name = 'music.html'

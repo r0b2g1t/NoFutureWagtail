@@ -62,6 +62,8 @@
                 <a class="nav-link" href="/website/music">Music</a>
                 <a class="nav-link" href="/website/calculators">Calculators</a>
                 <a class="nav-link" href="/website/programming">Programming</a>
+                <a class="nav-link" href="/website/knitting">Knitting</a>
+                <a class="nav-link" href="/website/herbs">Herbs</a>
                 <div class="container grid-lg">
                     <!-- Snipcart summary and View cart button -->
                     <section class="navbar-section snipcart-summary">
@@ -82,7 +84,7 @@
 <main class="container2">
     <div class="left-column">
         {% image page.image fill-400x600 as temp_image %}
-        <img style="float: right;"  src="{{ temp_image.url }}" alt=""/>
+        <img style="float: right;" src="{{ temp_image.url }}" alt=""/>
     </div>
 
     <div class="right-column">
@@ -94,23 +96,7 @@
             {{ page.short_description }}
         </p>
         <p style="text-align: left">
-           Price: {{page.price}}
-        </p>
-        <p>
-
-        <div class="form-group">
-            <label class="form-label" for="{{ f.name|lower }}">
-                {{ f.name }}
-            </label>
-            <select class="form-select custom-field-select" id="{{ f.name|lower }}"
-                    data-field="{{ forloop.counter }}">
-                {% for opt in f.options_array %}
-                <option>
-                    {{ opt }}
-                </option>
-                {% endfor %}
-            </select>
-        </div>
+            Price: {{page.price}}
         </p>
 
         <button class="snipcart-add-item btn btn-primary"
@@ -127,6 +113,12 @@
             <i class="icon icon-plus"></i>
             Add to cart
         </button>
+<br><br><br><br>
+        <p style="text-align: left">
+            Price for domestic parcel, within Iceland: 1000 ISK<br>
+            Price for international parcel, within Europe: 2000 ISK<br>
+            Price for international parcel, outside Europe: 4000 ISK
+        </p>
     </div>
     </div>
 </main>
@@ -140,6 +132,7 @@
             }
         };
     },false);
+
 
 
 </script>
